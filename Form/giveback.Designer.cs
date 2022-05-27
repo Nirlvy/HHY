@@ -44,6 +44,7 @@ namespace HHY
             this.back.TabIndex = 4;
             this.back.Text = "返回";
             this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // btn_giveback
             // 
@@ -54,6 +55,7 @@ namespace HHY
             this.btn_giveback.TabIndex = 3;
             this.btn_giveback.Text = "归还";
             this.btn_giveback.UseVisualStyleBackColor = true;
+            this.btn_giveback.Click += new System.EventHandler(this.btn_giveback_Click);
             // 
             // DGV
             // 
@@ -61,6 +63,8 @@ namespace HHY
             this.DGV.AllowUserToDeleteRows = false;
             this.DGV.AllowUserToResizeColumns = false;
             this.DGV.AllowUserToResizeRows = false;
+            this.DGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             this.DGV.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Location = new System.Drawing.Point(22, 12);
@@ -68,6 +72,7 @@ namespace HHY
             this.DGV.RowTemplate.Height = 23;
             this.DGV.Size = new System.Drawing.Size(312, 337);
             this.DGV.TabIndex = 2;
+            this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             // 
             // giveback
             // 
@@ -81,6 +86,7 @@ namespace HHY
             this.Name = "giveback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "giveback";
+            this.Load += new System.EventHandler(this.giveback_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).EndInit();
             this.ResumeLayout(false);
 
