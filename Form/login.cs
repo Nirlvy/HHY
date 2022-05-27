@@ -1,10 +1,10 @@
+using AForge.Video.DirectShow;
 using System;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 using utils.Service;
-using AForge.Video.DirectShow;
-using System.IO;
 
 namespace HHY
 {
@@ -23,6 +23,9 @@ namespace HHY
 
         public static string name;
         public static int ID;
+
+        int time = 0;
+        int flag = 0;
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -120,11 +123,10 @@ namespace HHY
                     float score = float.Parse(AccessToken.faceMatch(base64_1, base64_2));
                     if (score > 80)
                     {
-                        MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
+                        //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
                         textBox3.Text = dt.Rows[0][1].ToString();
-                        //System.Threading.Thread.Sleep(3000);
-                        this.Hide();
-                        common.getUser1Form().Show();
+                        time = 3;
+                        flag = 1;
                     }
                     else
                     {
@@ -138,11 +140,10 @@ namespace HHY
                         float score = float.Parse(AccessToken.faceMatch(base64_1, base64_2));
                         if (score > 80)
                         {
-                            MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "管理员");
+                            //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "管理员");
                             textBox3.Text = dt.Rows[0][1].ToString();
-                            //System.Threading.Thread.Sleep(3000);
-                            this.Hide();
-                            common.getUser1Form().Show();
+                            time = 3;
+                            flag = 1;
                         }
                         else
                         {
@@ -160,6 +161,7 @@ namespace HHY
         private void timenow_Tick(object sender, EventArgs e)
         {
             label7.Text = DateTime.Now.ToString();
+
             if (radioButton1.Checked == true)
             {
                 label3.Visible = false;
@@ -169,6 +171,27 @@ namespace HHY
             {
                 label3.Visible = true;
                 textBox2.Visible = true;
+            }
+
+            if (flag == 1)
+                next();
+        }
+
+        private void next()
+        {
+            tip.Visible = true;
+            Reco.Enabled = false;
+            textBox1.ReadOnly = true;
+            textBox2.ReadOnly = true;
+            textBox3.ReadOnly = true;
+
+            tip.Text = time + "秒后进入";
+            time--;
+            if (time < 0)
+            {
+                flag = 0;
+                this.Hide();
+                common.getUser1Form().Show();
             }
         }
 

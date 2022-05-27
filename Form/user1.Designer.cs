@@ -33,6 +33,7 @@ namespace HHY
             this.giveback = new System.Windows.Forms.Button();
             this.tip2 = new System.Windows.Forms.Label();
             this.tip1 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // borrow
@@ -50,7 +51,7 @@ namespace HHY
             // giveback
             // 
             this.giveback.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.giveback.Location = new System.Drawing.Point(127, 246);
+            this.giveback.Location = new System.Drawing.Point(127, 198);
             this.giveback.Name = "giveback";
             this.giveback.Size = new System.Drawing.Size(225, 65);
             this.giveback.TabIndex = 0;
@@ -79,6 +80,17 @@ namespace HHY
             this.tip1.Size = new System.Drawing.Size(0, 35);
             this.tip1.TabIndex = 1;
             // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.back.Location = new System.Drawing.Point(127, 269);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(225, 65);
+            this.back.TabIndex = 0;
+            this.back.Text = "返回";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // user1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -87,6 +99,7 @@ namespace HHY
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.tip1);
             this.Controls.Add(this.tip2);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.giveback);
             this.Controls.Add(this.borrow);
             this.Name = "user1";
@@ -104,5 +117,6 @@ namespace HHY
         private System.Windows.Forms.Button giveback;
         private System.Windows.Forms.Label tip2;
         private System.Windows.Forms.Label tip1;
+        private System.Windows.Forms.Button back;
     }
 }

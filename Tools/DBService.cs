@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
-using System.Reflection;
 
 namespace utils.Service
 {
@@ -59,7 +55,7 @@ namespace utils.Service
         /// <param name="sql"></param>
         /// <param name="para"></param>
         /// <returns>DataTable</returns>
-        public DataTable GetDataTableBySql(string sql, SqlParameter[] para=null)
+        public DataTable GetDataTableBySql(string sql, SqlParameter[] para = null)
         {
             using (SqlConnection sqlcon = new SqlConnection(ConStr))
             {

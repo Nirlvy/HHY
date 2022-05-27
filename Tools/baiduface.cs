@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.IO;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 namespace HHY
@@ -34,8 +34,8 @@ namespace HHY
             result = stuff["access_token"];
             return result;
         }
-    // 人脸对比
-    public static string faceMatch(string image_a,string image_b)
+        // 人脸对比
+        public static string faceMatch(string image_a, string image_b)
         {
             string token = getAccessToken();
             string host = "https://aip.baidubce.com/rest/2.0/face/v3/match?access_token=" + token;
