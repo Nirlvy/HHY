@@ -37,6 +37,7 @@ namespace HHY
                 bmp.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
                 byte[] arr = new byte[ms.Length]; ms.Position = 0;
                 ms.Read(arr, 0, (int)ms.Length); ms.Close();
+                bmp.Dispose();
                 return Convert.ToBase64String(arr);
             }
             catch (Exception ex)

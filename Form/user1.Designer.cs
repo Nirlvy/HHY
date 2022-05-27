@@ -38,12 +38,14 @@ namespace HHY
             // borrow
             // 
             this.borrow.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.borrow.ForeColor = System.Drawing.SystemColors.ControlText;
             this.borrow.Location = new System.Drawing.Point(127, 127);
             this.borrow.Name = "borrow";
             this.borrow.Size = new System.Drawing.Size(225, 65);
             this.borrow.TabIndex = 0;
             this.borrow.Text = "借书";
             this.borrow.UseVisualStyleBackColor = true;
+            this.borrow.Click += new System.EventHandler(this.borrow_Click);
             // 
             // giveback
             // 
@@ -54,13 +56,14 @@ namespace HHY
             this.giveback.TabIndex = 0;
             this.giveback.Text = "还书";
             this.giveback.UseVisualStyleBackColor = true;
+            this.giveback.Click += new System.EventHandler(this.giveback_Click);
             // 
             // tip2
             // 
             this.tip2.AutoSize = true;
             this.tip2.BackColor = System.Drawing.Color.Transparent;
             this.tip2.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tip2.Location = new System.Drawing.Point(243, 52);
+            this.tip2.Location = new System.Drawing.Point(210, 52);
             this.tip2.Name = "tip2";
             this.tip2.Size = new System.Drawing.Size(155, 35);
             this.tip2.TabIndex = 1;
@@ -71,7 +74,7 @@ namespace HHY
             this.tip1.AutoSize = true;
             this.tip1.BackColor = System.Drawing.Color.Transparent;
             this.tip1.Font = new System.Drawing.Font("宋体", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tip1.Location = new System.Drawing.Point(96, 52);
+            this.tip1.Location = new System.Drawing.Point(130, 52);
             this.tip1.Name = "tip1";
             this.tip1.Size = new System.Drawing.Size(0, 35);
             this.tip1.TabIndex = 1;

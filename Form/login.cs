@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using utils.Service;
 using AForge.Video.DirectShow;
+using System.IO;
 
 namespace HHY
 {
@@ -102,11 +103,12 @@ namespace HHY
             else
             {
                 Bitmap img = vispShoot.GetCurrentVideoFrame();
-                string temp = @".\temp\temp" + DateTime.Now.ToString() + ".jpeg";
+                string temp = @".\temp\temp.jpeg";
                 img.Save(temp, System.Drawing.Imaging.ImageFormat.Jpeg);
                 img.Dispose();
                 DisConnect();
                 string base64_1 = base64.ImageToBase64(temp);
+                File.Delete(@".\temp\temp.jpeg");
                 string base64_2 = dt.Rows[0][2].ToString();
                 name = dt.Rows[0][1].ToString();
 
@@ -118,9 +120,8 @@ namespace HHY
                         MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
                         textBox3.Text = dt.Rows[0][1].ToString();
                         //System.Threading.Thread.Sleep(3000);
-                        //this.Close();
-                        //common.login = null;
-                        //common.getUser1Form().Show();
+                        this.Hide();
+                        common.getUser1Form().Show();
                     }
                     else
                     {
@@ -134,7 +135,7 @@ namespace HHY
                         float score = float.Parse(AccessToken.faceMatch(base64_1, base64_2));
                         if (score > 80)
                         {
-                            MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
+                            //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
                             textBox3.Text = dt.Rows[0][1].ToString();
                             //System.Threading.Thread.Sleep(3000);
                             //this.Close();

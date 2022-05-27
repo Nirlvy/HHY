@@ -83,11 +83,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form\borrow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\borrow.Designer.cs">
+      <DependentUpon>borrow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form\user1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\user1.Designer.cs">
       <DependentUpon>user1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\giveback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\giveback.Designer.cs">
+      <DependentUpon>giveback.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools\baiduface.cs" />
     <Compile Include="Tools\base64.cs" />
@@ -101,6 +113,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form\borrow.resx">
+      <DependentUpon>borrow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\giveback.resx">
+      <DependentUpon>giveback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>

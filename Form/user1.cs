@@ -21,5 +21,19 @@ namespace HHY
         {
             tip1.Text = login.name;
         }
+
+        private void borrow_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            common.user1 = null;
+            common.getBorrowForm().Show();
+        }
+
+        private void giveback_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            common.user1 = null;
+            common.getGivebackForm().Show();
+        }
     }
 }
