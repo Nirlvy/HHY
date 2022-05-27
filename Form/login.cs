@@ -22,6 +22,7 @@ namespace HHY
         }
 
         public static string name;
+        public static int ID;
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -102,6 +103,8 @@ namespace HHY
             }
             else
             {
+                ID = int.Parse(id);
+
                 Bitmap img = vispShoot.GetCurrentVideoFrame();
                 string temp = @".\temp\temp.jpeg";
                 img.Save(temp, System.Drawing.Imaging.ImageFormat.Jpeg);
@@ -135,12 +138,11 @@ namespace HHY
                         float score = float.Parse(AccessToken.faceMatch(base64_1, base64_2));
                         if (score > 80)
                         {
-                            //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
+                            MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "管理员");
                             textBox3.Text = dt.Rows[0][1].ToString();
                             //System.Threading.Thread.Sleep(3000);
-                            //this.Close();
-                            //common.login = null;
-                            //common.getUser1Form().Show();
+                            this.Hide();
+                            common.getUser1Form().Show();
                         }
                         else
                         {

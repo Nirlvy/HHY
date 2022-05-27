@@ -35,6 +35,7 @@ namespace HHY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::HHY.Properties.Resources.a87219f6e21e792647b69b661e5495ee;
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Name = "giveback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
