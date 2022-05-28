@@ -32,7 +32,7 @@ namespace HHY
         private void back_Click(object sender, System.EventArgs e)
         {
             this.Close();
-            common.borrow = null;
+            common.giveback = null;
             common.getUser1Form().Show();
         }
 
