@@ -29,6 +29,7 @@ namespace HHY
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(giveback));
             this.back = new System.Windows.Forms.Button();
             this.btn_giveback = new System.Windows.Forms.Button();
             this.DGV = new System.Windows.Forms.DataGridView();
@@ -83,6 +84,7 @@ namespace HHY
             this.Controls.Add(this.back);
             this.Controls.Add(this.btn_giveback);
             this.Controls.Add(this.DGV);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "giveback";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "giveback";

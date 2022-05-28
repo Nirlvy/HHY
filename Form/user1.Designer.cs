@@ -29,6 +29,7 @@ namespace HHY
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(user1));
             this.borrow = new System.Windows.Forms.Button();
             this.giveback = new System.Windows.Forms.Button();
             this.tip2 = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@ namespace HHY
             this.Controls.Add(this.back);
             this.Controls.Add(this.giveback);
             this.Controls.Add(this.borrow);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "user1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "user1";

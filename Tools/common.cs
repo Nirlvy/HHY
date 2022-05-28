@@ -6,6 +6,9 @@ namespace HHY
         public static user1 user1 = null;
         public static borrow borrow = null;
         public static giveback giveback = null;
+        public static admin admin = null;
+        public static list list = null;
+        public static sign_up sign_up = null;
 
         public static login getLoginForm()
         {
@@ -41,6 +44,33 @@ namespace HHY
                 giveback = new giveback();
             }
             return giveback;
+        }
+
+        public static admin getAdminForm()
+        {
+            if (admin == null)
+            {
+                admin = new admin();
+            }
+            return admin;
+        }
+
+        public static list getListForm()
+        {
+            if (list == null)
+            {
+                list = new list();
+            }
+            return list;
+        }
+
+        public static sign_up getSign_upForm()
+        {
+            if (sign_up == null)
+            {
+                sign_up = new sign_up();
+            }
+            return sign_up;
         }
     }
 }
