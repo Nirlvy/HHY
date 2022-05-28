@@ -8,18 +8,18 @@ namespace HHY
 {
     public partial class giveback : Form
     {
-        DBService dbIris = DBService.getInstance("HHY");
+        private DBService dbIris = DBService.getInstance("HHY");
 
         public giveback()
         {
             InitializeComponent();
         }
 
-        DataSet ds = new DataSet();
+        private DataSet ds = new DataSet();
         private string sql = "SELECT id AS 书号,book AS 书名,time AS 借阅时间 FROM [Library].[dbo].[book] WHERE user_id = '" + login.ID + "'";
         private string connString = "Data Source=.;Initial Catalog=Library;Integrated Security=SSPI;";
 
-        int line;
+        private int line;
 
         private void giveback_Load(object sender, System.EventArgs e)
         {

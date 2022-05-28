@@ -3,17 +3,19 @@ using System.Windows.Forms;
 
 namespace HHY
 {
-    static class Program
+    internal static class Program
     {
+        public static login login;
+
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            Application.Run(login = new login());
         }
     }
 }

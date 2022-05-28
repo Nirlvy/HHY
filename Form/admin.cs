@@ -1,11 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HHY
@@ -31,9 +24,16 @@ namespace HHY
 
         private void sign_up_Click(object sender, EventArgs e)
         {
-             this.Close();
+            this.Close();
             common.admin = null;
             common.getSign_upForm().Show();
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            common.admin = null;
+            common.getLoginForm().Show();
         }
     }
 }

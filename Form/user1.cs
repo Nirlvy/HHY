@@ -7,7 +7,7 @@ namespace HHY
 {
     public partial class user1 : Form
     {
-        DBService dbIris = DBService.getInstance("HHY");
+        private DBService dbIris = DBService.getInstance("HHY");
 
         public user1()
         {

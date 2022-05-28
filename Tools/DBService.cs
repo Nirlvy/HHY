@@ -5,10 +5,11 @@ using System.Data.SqlClient;
 
 namespace utils.Service
 {
-    class DBService
+    internal class DBService
     {
         private string ConStr;
         private static DBService _m_instance = null;
+
         public static DBService getInstance(string dbStr)
         {
             if (_m_instance == null)
@@ -17,6 +18,7 @@ namespace utils.Service
             }
             return _m_instance;
         }
+
         /// <summary>
         /// 数据库服务类
         /// </summary>

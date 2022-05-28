@@ -2,7 +2,6 @@ namespace HHY
 {
     public class common
     {
-        public static login login = null;
         public static user1 user1 = null;
         public static borrow borrow = null;
         public static giveback giveback = null;
@@ -12,11 +11,11 @@ namespace HHY
 
         public static login getLoginForm()
         {
-            if (login == null)
-            {
-                login = new login();
-            }
-            return login;
+            //if (login == null)
+            //{
+            //    login = new login();
+            //}
+            return Program.login;
         }
 
         public static user1 getUser1Form()

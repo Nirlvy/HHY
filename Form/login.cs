@@ -10,7 +10,7 @@ namespace HHY
 {
     public partial class login : Form
     {
-        DBService dbIris = DBService.getInstance("HHY");
+        private DBService dbIris = DBService.getInstance("HHY");
 
         private FilterInfoCollection videoDevices;
         private VideoCaptureDevice videoDevice;
@@ -24,8 +24,8 @@ namespace HHY
         public static string name;
         public static int ID;
 
-        int time = 0;
-        int flag = 0;
+        private int time = 0;
+        private int flag = 0;
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -84,7 +84,12 @@ namespace HHY
                 textBox2.Text = "";
                 textBox3.Text = "";
                 textBox1.ReadOnly = false;
+                textBox2.ReadOnly = false;
+                textBox3.ReadOnly = false;
                 Reco.Text = "识别";
+                tip.Text = "三秒钟后将自动拍摄";
+                tip.Visible = false;
+                Reco.Enabled = true;
                 DisConnect();
             }
         }
@@ -125,7 +130,7 @@ namespace HHY
                     {
                         //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "同学");
                         textBox3.Text = dt.Rows[0][1].ToString();
-                        time = 3;
+                        time = 5;
                         flag = 1;
                     }
                     else
@@ -135,14 +140,14 @@ namespace HHY
                 }
                 else if (radioButton2.Checked == true)//管理员
                 {
-                    if (dt.Rows[0][3].ToString() == "True" && code == dt.Rows[0][4].ToString())
+                    if (dt.Rows[0][3].ToString() == "是" && code == dt.Rows[0][4].ToString())
                     {
                         float score = float.Parse(AccessToken.faceMatch(base64_1, base64_2));
                         if (score > 80)
                         {
                             //MessageBox.Show("欢迎" + dt.Rows[0][1].ToString() + "管理员");
                             textBox3.Text = dt.Rows[0][1].ToString();
-                            time = 3;
+                            time = 5;
                             flag = 1;
                         }
                         else
@@ -190,8 +195,13 @@ namespace HHY
             if (time < 0)
             {
                 flag = 0;
+
                 this.Hide();
-                common.getUser1Form().Show();
+                if (radioButton1.Checked == true)
+                    common.getUser1Form().Show();
+                else
+                    common.getAdminForm().Show();
+                btnReco_Click(null, null);
             }
         }
 

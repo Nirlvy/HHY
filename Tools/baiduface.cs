@@ -15,6 +15,7 @@ namespace HHY
 
         // 百度云中开通对应服务应用的 API Key 建议开通应用的时候多选服务
         private static String clientId = "PKOerg4AozcINOnwCnDlkHzG";
+
         // 百度云中开通对应服务应用的 Secret Key
         private static String clientSecret = "yrkdy5nSD90tEWNnTGhyDViutLjyAAEg";
 
@@ -34,6 +35,7 @@ namespace HHY
             result = stuff["access_token"];
             return result;
         }
+
         // 人脸对比
         public static string faceMatch(string image_a, string image_b)
         {

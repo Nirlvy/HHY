@@ -34,6 +34,7 @@ namespace HHY
             this.tip2 = new System.Windows.Forms.Label();
             this.list = new System.Windows.Forms.Button();
             this.sign_up = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tip1
@@ -71,7 +72,7 @@ namespace HHY
             // sign_up
             // 
             this.sign_up.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.sign_up.Location = new System.Drawing.Point(157, 241);
+            this.sign_up.Location = new System.Drawing.Point(157, 211);
             this.sign_up.Name = "sign_up";
             this.sign_up.Size = new System.Drawing.Size(169, 56);
             this.sign_up.TabIndex = 4;
@@ -79,12 +80,24 @@ namespace HHY
             this.sign_up.UseVisualStyleBackColor = true;
             this.sign_up.Click += new System.EventHandler(this.sign_up_Click);
             // 
+            // back
+            // 
+            this.back.Font = new System.Drawing.Font("宋体", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.back.Location = new System.Drawing.Point(157, 283);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(169, 56);
+            this.back.TabIndex = 4;
+            this.back.Text = "返回";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::HHY.Properties.Resources.a87219f6e21e792647b69b661e5495ee;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.sign_up);
             this.Controls.Add(this.list);
             this.Controls.Add(this.tip1);
@@ -105,5 +118,6 @@ namespace HHY
         private System.Windows.Forms.Label tip2;
         private System.Windows.Forms.Button list;
         private System.Windows.Forms.Button sign_up;
+        private System.Windows.Forms.Button back;
     }
 }

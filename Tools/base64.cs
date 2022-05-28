@@ -4,7 +4,7 @@ using System.IO;
 
 namespace HHY
 {
-    class base64
+    internal class base64
     {
         /// <summary>
         /// base64 转 Image
@@ -41,6 +41,5 @@ namespace HHY
                 return null;
             }
         }
-
     }
 }
