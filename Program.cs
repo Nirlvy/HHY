@@ -15,7 +15,7 @@ namespace HHY
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new login());
+            Application.Run(login = new login());
         }
     }
 }
