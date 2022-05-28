@@ -25,7 +25,7 @@ namespace HHY
                 borrow.Enabled = false;
             if (count != 0)
             {
-                string time = Convert.ToDateTime(dt.Rows[0][5].ToString()).AddDays(14).ToString("yyyy/MM/dd");
+                string time = Convert.ToDateTime(dt.Rows[0][2].ToString()).AddDays(14).ToString("yyyy/MM/dd");
                 giveback.Text = "还书（最近时间为" + time + ")";
             }
         }

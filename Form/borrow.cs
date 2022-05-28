@@ -16,7 +16,7 @@ namespace HHY
         }
 
         private DataSet ds = new DataSet();
-        private string sql = "SELECT id AS 书号,book AS 书名,number AS 借阅次数 FROM [Library].[dbo].[book] WHERE book.state = '库存'";
+        private string sql = "SELECT id AS 书号,book AS 书名,book_count AS 库存,borrow_count AS 借阅次数 FROM [Library].[dbo].[book] AS TEMP WHERE book_count != 0 AND id NOT IN (SELECT book_id AS borrow_id FROM [Library].[dbo].[book_borrow] WHERE user_id = " + login.ID + " )";
         private string connString = "Data Source=.;Initial Catalog=Library;Integrated Security=SSPI;";
 
         private int line;
@@ -46,7 +46,8 @@ namespace HHY
             DialogResult dr = MessageBox.Show("确认要借阅" + ds.Tables[0].Rows[line][1].ToString() + "吗", "确认", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes)
             {
-                dbIris.ExecuteSql(@"UPDATE [Library].[dbo].[book] SET state = '借出' , number = '" + (int.Parse(ds.Tables[0].Rows[line][2].ToString()) + 1).ToString() + "',user_id = '" + login.ID + "' , time = '" + DateTime.Now.ToString("d") + "' WHERE id = '" + ds.Tables[0].Rows[line][0].ToString() + "'");
+                dbIris.ExecuteSql(@"UPDATE [Library].[dbo].[book] SET borrow_count = '" + (int.Parse(ds.Tables[0].Rows[line][3].ToString()) + 1).ToString() + "',book_count = '" + (int.Parse(ds.Tables[0].Rows[line][2].ToString()) - 1).ToString() + "' WHERE id = " + int.Parse(ds.Tables[0].Rows[line][0].ToString()) + "");
+                dbIris.ExecuteSql(@"INSERT INTO [Library].[dbo].[book_borrow] (book_id,user_id,time) VALUES(" + int.Parse(ds.Tables[0].Rows[line][0].ToString()) + "," + login.ID + ",'" + DateTime.Now.ToString("d") + "')");
                 dbIris.ExecuteSql(@"INSERT INTO [Library].[dbo].[borrow_log] (time,user_id,book_id,state) VALUES ('" + DateTime.Now.ToString("G") + "' ,'" + login.ID + "','" + ds.Tables[0].Rows[line][0] + "','借出')");
                 ds.Clear();
                 borrow_Load(null, null);

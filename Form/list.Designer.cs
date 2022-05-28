@@ -34,23 +34,28 @@ namespace HHY
             this.book = new System.Windows.Forms.TabPage();
             this.DGV1 = new System.Windows.Forms.DataGridView();
             this.borror_log = new System.Windows.Forms.TabPage();
-            this.DGV2 = new System.Windows.Forms.DataGridView();
-            this.user = new System.Windows.Forms.TabPage();
             this.DGV3 = new System.Windows.Forms.DataGridView();
+            this.user = new System.Windows.Forms.TabPage();
+            this.DGV4 = new System.Windows.Forms.DataGridView();
             this.save = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
+            this.book_borrow = new System.Windows.Forms.TabPage();
+            this.DGV2 = new System.Windows.Forms.DataGridView();
             this.tabControl.SuspendLayout();
             this.book.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).BeginInit();
             this.borror_log.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
-            this.user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV3)).BeginInit();
+            this.user.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV4)).BeginInit();
+            this.book_borrow.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
             // 
             this.tabControl.Controls.Add(this.book);
+            this.tabControl.Controls.Add(this.book_borrow);
             this.tabControl.Controls.Add(this.borror_log);
             this.tabControl.Controls.Add(this.user);
             this.tabControl.Location = new System.Drawing.Point(2, 1);
@@ -83,7 +88,7 @@ namespace HHY
             // 
             // borror_log
             // 
-            this.borror_log.Controls.Add(this.DGV2);
+            this.borror_log.Controls.Add(this.DGV3);
             this.borror_log.Location = new System.Drawing.Point(4, 22);
             this.borror_log.Name = "borror_log";
             this.borror_log.Padding = new System.Windows.Forms.Padding(3);
@@ -91,27 +96,6 @@ namespace HHY
             this.borror_log.TabIndex = 1;
             this.borror_log.Text = "借阅记录";
             this.borror_log.UseVisualStyleBackColor = true;
-            // 
-            // DGV2
-            // 
-            this.DGV2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGV2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV2.Location = new System.Drawing.Point(0, 0);
-            this.DGV2.Name = "DGV2";
-            this.DGV2.RowTemplate.Height = 23;
-            this.DGV2.Size = new System.Drawing.Size(418, 331);
-            this.DGV2.TabIndex = 1;
-            // 
-            // user
-            // 
-            this.user.Controls.Add(this.DGV3);
-            this.user.Location = new System.Drawing.Point(4, 22);
-            this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(418, 331);
-            this.user.TabIndex = 2;
-            this.user.Text = "用户列表";
-            this.user.UseVisualStyleBackColor = true;
             // 
             // DGV3
             // 
@@ -123,6 +107,27 @@ namespace HHY
             this.DGV3.RowTemplate.Height = 23;
             this.DGV3.Size = new System.Drawing.Size(418, 331);
             this.DGV3.TabIndex = 1;
+            // 
+            // user
+            // 
+            this.user.Controls.Add(this.DGV4);
+            this.user.Location = new System.Drawing.Point(4, 22);
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(418, 331);
+            this.user.TabIndex = 2;
+            this.user.Text = "用户列表";
+            this.user.UseVisualStyleBackColor = true;
+            // 
+            // DGV4
+            // 
+            this.DGV4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV4.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV4.Location = new System.Drawing.Point(0, 0);
+            this.DGV4.Name = "DGV4";
+            this.DGV4.RowTemplate.Height = 23;
+            this.DGV4.Size = new System.Drawing.Size(418, 331);
+            this.DGV4.TabIndex = 1;
             // 
             // save
             // 
@@ -154,6 +159,27 @@ namespace HHY
             this.back.UseVisualStyleBackColor = false;
             this.back.Click += new System.EventHandler(this.back_Click);
             // 
+            // book_borrow
+            // 
+            this.book_borrow.Controls.Add(this.DGV2);
+            this.book_borrow.Location = new System.Drawing.Point(4, 22);
+            this.book_borrow.Name = "book_borrow";
+            this.book_borrow.Size = new System.Drawing.Size(418, 331);
+            this.book_borrow.TabIndex = 3;
+            this.book_borrow.Text = "已借阅";
+            this.book_borrow.UseVisualStyleBackColor = true;
+            // 
+            // DGV2
+            // 
+            this.DGV2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGV2.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGV2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV2.Location = new System.Drawing.Point(0, 0);
+            this.DGV2.Name = "DGV2";
+            this.DGV2.RowTemplate.Height = 23;
+            this.DGV2.Size = new System.Drawing.Size(418, 331);
+            this.DGV2.TabIndex = 1;
+            // 
             // list
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -172,9 +198,11 @@ namespace HHY
             this.book.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV1)).EndInit();
             this.borror_log.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
-            this.user.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGV3)).EndInit();
+            this.user.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV4)).EndInit();
+            this.book_borrow.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGV2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -185,10 +213,12 @@ namespace HHY
         private System.Windows.Forms.TabPage book;
         private System.Windows.Forms.DataGridView DGV1;
         private System.Windows.Forms.TabPage borror_log;
-        private System.Windows.Forms.DataGridView DGV2;
-        private System.Windows.Forms.TabPage user;
         private System.Windows.Forms.DataGridView DGV3;
+        private System.Windows.Forms.TabPage user;
+        private System.Windows.Forms.DataGridView DGV4;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button back;
+        private System.Windows.Forms.TabPage book_borrow;
+        private System.Windows.Forms.DataGridView DGV2;
     }
 }
