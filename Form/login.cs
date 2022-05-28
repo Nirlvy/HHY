@@ -31,12 +31,7 @@ namespace HHY
         {
             videoDevices = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             videoDevice = new VideoCaptureDevice(videoDevices[0].MonikerString);
-            GetDeviceResolution(videoDevice);
-        }
-
-        private void GetDeviceResolution(VideoCaptureDevice videoCaptureDevice)
-        {
-            videoCapabilities = videoCaptureDevice.VideoCapabilities;
+            videoCapabilities = videoDevice.VideoCapabilities;
         }
 
         private void DisConnect()
