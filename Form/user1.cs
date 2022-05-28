@@ -18,7 +18,7 @@ namespace HHY
         {
             tip1.Text = login.name;
             DataTable dt;
-            dt = dbIris.GetDataTableBySql(@"SELECT * FROM [Library].[dbo].[book] where user_id=" + login.ID + "ORDER BY time");
+            dt = dbIris.GetDataTableBySql(@"SELECT * FROM [Library].[dbo].[book_borrow] where user_id=" + login.ID + "ORDER BY time");
             int count = dt.Rows.Count;
             borrow.Text = "借书(你还可借" + (3 - count) + "本书)";
             if (count >= 3)
